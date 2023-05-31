@@ -7,37 +7,48 @@ import MobileStepper from '@mui/material/MobileStepper';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
-import people from "../assets/crew/image-douglas-hurley.png"
+import people1 from "../assets/crew/image-douglas-hurley.png"
+import people2 from "../assets/crew/image-mark-shuttleworth.png"
+import people3 from "../assets/crew/image-victor-glover.png"
+import people4 from "../assets/crew/image-anousheh-ansari.png"
+
 import data from "../starter-code/data.json"
 
 export default function Crew() {
 
     const [activeStep, setActiveStep] = React.useState(0);
-    const img = data["crew"][activeStep]["images"]["png"]
+    const peoples = [people1, people2, people3, people4]
+    const img = peoples[activeStep]
     const name = data["crew"][activeStep]["name"]
     const role = data["crew"][activeStep]["role"]
     const bio = data["crew"][activeStep]["bio"]
 
     return (<>
         <div style={{ maxWidth: "100%" }}>
-            <p style={{ color: "white", textAlign: "left" }}>02 MEET YOUR CREW</p>
+            <p style={{ color: "white", fontSize: 25, textAlign: "left" }}><span style={{ color: "gray" }}>02</span> MEET YOUR CREW</p>
             <Stack className="content" direction="row" spacing={5} display="flex" alignItems="center">
 
                 <Stack width="600px" display="flex" alignItems="left">
-                    <p style={{ color: "white", fontSize: 30, textAlign: "left", margin: 0 }}>{role}</p>
+                    <p style={{ color: "#9A9DB0", fontSize: 30, textAlign: "left", margin: 0 }}>{role}</p>
                     <p style={{ color: "white", fontSize: 60, textAlign: "left", margin: 0 }}>{name}</p>
-                    <p style={{ color: "white", textAlign: "left", height: 100 }}>{bio}</p>
+                    <p style={{ color: "#9A9DB0", textAlign: "left", height: 100 }}>{bio}</p>
                     <DotsMobileStepper />
                 </Stack>
-                <img src={people} alt="" style={{ maxWidth: 300 }} />
+                <img src={img} alt="" style={{ maxWidth: 300 }} />
             </Stack>
 
             <img src={background} alt="" style={{ width: 1600, position: "fixed", left: 0, top: 0, zIndex: "-1" }} />
         </div >
     </>)
 
+
+
     function DotsMobileStepper() {
+
+
         const theme = useTheme();
+
+
 
 
         const handleNext = () => {
@@ -54,7 +65,7 @@ export default function Crew() {
                 steps={4}
                 position="static"
                 activeStep={activeStep}
-                sx={{ maxWidth: 400, flexGrow: 1 }}
+                sx={{ maxWidth: 400, flexGrow: 1, background: "none" }}
                 nextButton={
                     <Button size="small" onClick={handleNext} disabled={activeStep === 3}>
                         Next

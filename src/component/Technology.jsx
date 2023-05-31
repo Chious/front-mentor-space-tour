@@ -1,16 +1,19 @@
 import background from "../assets/technology/background-technology-desktop.jpg"
-import { Button, Stack, ButtonGroup, Box } from "@mui/material"
+import { Button, Stack, Typography } from "@mui/material"
 
 import { useState } from "react";
 
 import data from "../starter-code/data.json"
-import picture from "../assets/technology/image-space-capsule-landscape.jpg"
+
+import picture1 from "../assets/technology/image-launch-vehicle-portrait.jpg"
+import picture2 from "../assets/technology/image-spaceport-portrait.jpg"
+import picture3 from "../assets/technology/image-space-capsule-portrait.jpg"
 
 export default function Technology() {
 
     const [step, setStep] = useState(0)
-
-    const img = data["technology"][step]["images"]["portrait"]
+    const pictures = [picture1, picture2, picture3]
+    const img = pictures[step]
     const name = data["technology"][step]["name"]
     const description = data["technology"][step]["description"]
 
@@ -20,15 +23,17 @@ export default function Technology() {
     }
 
     return (<>
-        <div style={{ maxWidth: "100%" }}>
+        <div style={{ maxWidth: "100%", marginTop: 80 }}>
+            <Typography textAlign="left" fontSize="25px" color="white" ><span style={{ color: "gray" }}>03</span> SPACE LUNCH 101</Typography>
+
             <Stack direction="row" spacing={3}>
                 <GroupOrientation />
                 <Stack direction="column" width="450px">
-                    <p style={{ color: "white", textAlign: "left" }}>THE TERMINOLOGY...</p>
-                    <p style={{ color: "white", fontSize: 50, margin: 0, textAlign: "left" }}>{name}</p>
-                    <p style={{ color: "white", textAlign: "left", fontSize: 15, margin: 0 }}>{description}</p>
+                    <p style={{ color: "#9A9DB0", textAlign: "left" }}>THE TERMINOLOGY...</p>
+                    <h1 style={{ color: "white", fontSize: 50, margin: 0, textAlign: "left" }}>{name}</h1>
+                    <p style={{ color: "#9A9DB0", textAlign: "left", fontSize: 15, margin: 0 }}>{description}</p>
                 </Stack>
-                <img src={picture} alt="" style={{ width: 500 }} />
+                <img src={img} alt="" style={{ width: 500 }} />
             </Stack>
 
 

@@ -54,3 +54,11 @@ body,
 #root {
   padding: 0px;
 }
+
+h1 {
+  font-family: 'Playfair', serif;
+}
+
+p {
+  font-family: 'PT Sans', sans-serif;
+}
