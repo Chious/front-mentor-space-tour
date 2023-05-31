@@ -40,8 +40,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/create-page-by-mui-3Ehoiwq5Uz)
+- Live Site URL: [Add live site URL here](https://master--admirable-halva-09f882.netlify.app/)
 
 ## My process
 
